@@ -1,0 +1,27 @@
+
+<html>
+    
+<head>
+</head>
+<body>
+         
+
+    
+    <div style="&#10;background-image: url(//static.instiz.net/static/190704_gonight_bg.png);&#10;width: 100%;&#10;height: 50px;&#10;cursor:pointer;&#10;" onclick="location='//www.instiz.net/one.htm';"><div style="&#10;background-repeat: no-repeat;&#10;background-position: center;&#10;background-image: url('//static.instiz.net/static/190704_gonight.png');&#10;width: 100%;&#10;height: 50px;&#10;"></div>
+</div> 
+    <a href="{% url 'write' %}"><button type="button" onclick="" class="btn btn-primary">글쓰기</button></a>      
+    
+    
+    
+     {% for blog in blogs %}
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.body}}</p>
+
+        <hr>
+   
+
+</body>
+
+    
+ {% endfor %}
+</html>

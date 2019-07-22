@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <style>
+.button {
+  background-color: #bababa; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 1000px;
+  padding: 20px 10px;
+}
+
+
+
+input[type=text] {
+  width: 100%;
+  padding: 25px 20px;
+  margin: 0.0001px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  width: 700px;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 25px 20px;
+  margin: 0.0001px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  width: 700px;
+}
+
+input[type=text]:focus {
+  background-color: white;
+}
+        
+        .star{
+            color:#337ab7;
+            font-weight: bold;
+        }
+        .btn2{
+          background-color: white;
+          border:'1'
+          color: black;
+          font-size: 16px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 130px;
+  padding: 25px 20px;
+        }
+
+        .gray{
+          background-color: #dbdbdb;
+        }
+        table, td{
+          border-left:1px solid none;
+        }
+    </style>
+</head>
+<br><center><br>
+  <br>
+  <br>
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>회원가입</h1>
+    <br>
+    <br>
+    <p>회원정보 입력</p>
+    
+    <br>
+    <button class="button">
+      <ul style="list-style-type: circle;">
+      <li>로컬리 홈페이지는 회원의 개인정보보호문제를 신중하게 취급합니다.</li>
+        <li>아이디/비밀번호 분실 등 본인 여부 확인이 필요할 경우를 위해 가급적 신분증에 기재된 이름, 생년월일을 입력해 주세요.</li>
+    </ul>
+    </button>
+    <br>
+    <br>
+    
+        
+    {%csrf_token%}
+    <table border="1" width="1000">
+        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>아이디</li></ul></td><td><form method="POST" action="{%url 'register'%}">
+            <input type="text" id="fname" name="fname" value="최소5자 ~ 최대15자">
+            <br><bb class="star">영문, 숫자만 가능합니다(5~15자)</bb></td></tr>
+        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호</li></ul></td>
+          <td><input type="password" id="lname" name="lname" value="영문,숫자 특수문자 중 3가지 이상 혼합 9~15자"><br><bb class="star">특수문자는 '~', '!', '@', '#', '$', '^', '*', '(', ')', '=', '_', '.','|'만 사용가능합니다.</bb></td></tr>
+        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호 확인</li></ul></td><td><input type="password" id="lname" name="lname" value=""></td></tr>
+        
+    </table>
+    <!-- <form method="POST" action="{%url 'register'%}">
+        {%csrf_token%}
+            <label for="fname"><b>아이디 정보</b></label><br>
+            <input type="text" id="fname" name="fname" value="아이디">
+            <br><br>
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" value="비밀번호">
+          </form> -->
+          
+          
+        </center></body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <style>
+.button {
+  background-color: #337ab7; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 500px;
+  padding: 20px 10px;
+}
+
+
+
+input[type=text] {
+  width: 100%;
+  padding: 25px 20px;
+  margin: 0.0001px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  width: 500px;
+}
+
+input[type=text]:focus {
+  background-color: white;
+}
+    </style>
+</head>
+<body><center><br>
+  <br>
+  <br>
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>로그인</h1>
+    <br>
+    <br>
+    <p>로컬리 홈페이지를 방문해주셔서 감사합니다</p>
+    <p>로그인하시면 보다 편리하게 서비스 이용이 가능합니다.
+    <br>
+    <br>
+    <br>
+    <form method="POST" action="{url 'login'}">
+            <label for="fname"></label>
+            <input type="text" id="fname" name="fname" value="아이디">
+            <br><br>
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" value="비밀번호">
+          </form>
+          <br>
+          <button class="button">로그인</button>
+        </center></body>
+</html>
