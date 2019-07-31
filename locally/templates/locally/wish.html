@@ -1,105 +1,120 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9fnpemqt72"></script>
-<style>
-    .btn {
-        width: 60px; height: 26px;
-        font-size:10px;
-    }
-     @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
-         @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
-    body{
-        font-family:'SDKukdetopokki';
-    }
-    .nav1{
-        text-align: center;
-    }
-    .nav2 {
-        display: block;
-        text-align:center;
-        font-size: 25px;
-        margin-right: 10px;
-        margin-left:10px;
-        background-color:#337ab7;
-        padding-top:15px;
-        padding-bottom:15px;
-    }
-    .title{
-        display: inline-block;
-        text-align: center;
-        margin-left : 70px;
-        margin-top: 10px;
-        font-size: 40px;
-    }
-    .title2{
-        display: inline-block;
-        text-align: center;
-        margin-right : 30px;
-        margin-top: 40px;
-        float:right;
-        font-size: 15px;
-    }
-    .title3{
-        color:white;
-        margin-left:20px;
-        margin-right : 40px;
-        margin-top: 0px;
-        margin-bottom :0px;
-    }
-    .title3:hover{
-        color:white;
-    }
-    a {
-    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    display: inline-block;
-    margin: 20px auto;
-    max-width: 180px;
-    text-decoration: none;
-    border-radius: 4px;
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous">    
     
- }
- .button{
-    padding: 20px 30px;
- }
- a.button {
-    color: rgba(30, 22, 54, 0.6);
-    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
-     margin-right:30px;
- }
- 
- .wrap{
-     text-align: center;
+<link rel="stylesheet" href="{% static 'styles_wish.css' %}">
+<style type="text/css">
+    ul, li { 
+        list-style:none;
+        text-align:center;
+        padding:0;
+        margin:0;
     }
-
- a.button:hover {
-    color: rgba(255, 255, 255, 0.85);
-    box-shadow: #337ab7 0 0px 0px 40px inset;
- }
-    .pills {
+    #mainWrapper {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    #mainWrapper > ul > li:first-child {
+        text-align: center;
+        font-size:14pt;
+        height:40px;
+        vertical-align:middle;
+        line-height:30px;
+    }
+    #ulTable {
+        margin-top:10px;
+    }
+    #ulTable > li:first-child > ul > li {
+        background-color:#337ab7;
+        font-weight:bold;
+        text-align:center;
+        color:white;
+    }
+    #ulTable > li > ul {
+        clear:both;
+        padding:0px auto;
+        position:relative;
+        min-width:40px;
+    }
+    #ulTable > li > ul > li { 
         float:left;
+        font-size:10pt;
+        border-bottom:1px solid silver;
+        vertical-align:baseline;
+    }    
+    #ulTable > li > ul > li:first-child               {width:10%;} 
+    #ulTable > li > ul > li:first-child +li           {width:45%;} 
+    #ulTable > li > ul > li:first-child +li+li        {width:20%;} 
+    #ulTable > li > ul > li:first-child +li+li+li     {width:15%;} 
+    #ulTable > li > ul > li:first-child +li+li+li+li  {width:10%;} 
+    #divPaging {
+        clear:both; 
+        margin:0 auto; 
+        width:220px; 
+        height:50px;
+    }
+    #divPaging > div {
+        float:left;
+        width: 30px;
+        margin:0 auto;
+        text-align:center;
+    }
+    #liSearchOption {clear:both; float: right;}
+    #liSearchOption > div {
+        margin:0 auto; 
+        margin-top: 30px; 
+        width:auto; 
+        height:60px; 
+    }
+    .left {
+        text-align : left;
+    }
+    .myButton {
+	    background-color:#3379b7;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Arial;
+	    font-size:13px;
+	    padding:3px 9px;
+	    text-decoration:none;
+    }
+    .myButton:hover {
+	    background-color:#085492;
+        position:relative;
+	    top:1px;
+    }
+    #divPaging > a {
+        background-color:#3379b7;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Arial;
+	    font-size:13px;
+	    padding:3px 9px;
+	    text-decoration:none;
+    }
+    #divPaging > a:hover{
+        background-color:#085492;
+    }
+    p {
+        font-size:30px; 
+        color:#337ab7;
     }
 </style>
 </head>
 <body>
     <div class="nav1">
-        <a href="{% url 'choice'%}"><p class="title" >locally</p></a><a href="{% url 'site'%}"><p class="title">서울</p></a> 
+        <p class="title" >locally</p> <p class="title">서울</p>
         <a href="{% url 'login'%}" class="title2"><p>로그인</p></a> <a href="register"  class="title2"><p>회원가입</p></a> 
     </div>
     <div class="nav2">
@@ -116,13 +131,76 @@
             <a href="#" class="button">40대</a>
             <a href="#" class="button">50대</a>
     </div>
-
-<ul class="nav nav-pills nav-stacked" class="pills">
-<li role="presentation" class="active"><a href="#">시민청원</a></li>
-  <li role="presentation"><a href="#">시민제안</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
-    
+    <div id="lnb" class="ab">
+        <h1>행사일정</h1>
+        <ul>
+            <li><a href="#none">시민제안</a></li>
+            <li><a href="https://www1.president.go.kr/petitions">시민청원</a></li>
+        </ul>
+    </div>
+    <div class="ab"> 
+        <div id="mainWrapper">
+            <br><br>
+            <blockquote>
+                <p>시민의견</p>
+                <h5 class="text-right">
+                    🏠Home
+                    <span>&gt;</span>바란다
+                    <span>&gt;</span>시민의견
+                    </h5>
+            </blockquote>
+            <li id='liSearchOption'>
+                <div>
+                    <select style="height:30px;" class="selectpicker">
+                        <option>제목</option>
+                        <option>작성자</option>
+                    </select>
+                    <input style="height:28px;" id='txtKeyWord' />
+                    <a href="" class="myButton" style="padding:1px 10px;">검색</a>
+                </div>
+            </li>      
+            <ul id ="ulTable">
+                <li>
+                    <ul>
+                        <li>No</li>
+                        <li>제목</li>
+                        <li>작성일</li>
+                        <li>작성자</li>
+                        <li>조회수</li>
+                    </ul>
+                </li>
+                {% for wish in posts %}
+                <li>
+                    <ul>
+                        <li>{{ wish.id }}</li>
+                        <li class="left"><a style="text-decoration: none; margin:10px;" href="{% url 'wishclick' wish.id %}">{{ wish.title }}({{wish.comments.count}})</a></li> 
+                        <li>{{ wish.pub_date }}</li>
+                        <li>전유림</li>
+                        <li>0</li>
+                    </ul>
+                    <br>
+                </li> 
+                {% endfor %} 
+                <br>
+                <a style="float:right;" href="{% url 'wishwrite' %}" class="myButton">글쓰기</a><br>
+            </ul>
+            <li>
+                <div id="divPaging">
+                    {%if posts.has_previous%}
+                    <a href="?page=1">◀◀</a>
+                    <a href="?page={{posts.previous_page_number}}">◀</a>
+                    {%endif%}
+                    <span>{{posts.number}}</span>
+                    <span>of</span>
+                    <span>{{posts.paginator.num_pages}}</span> 
+                    {%if posts.has_next%}
+                    <a href="?page={{posts.next_page_number}}">▶</a>
+                    <a href="?page={{posts.paginator.num_pages}}">▶▶</a>
+                    {%endif%}
+                </div>
+            </li>
+        </div>
+    </div>
 </body>
 </html>
     

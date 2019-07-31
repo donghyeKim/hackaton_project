@@ -39,7 +39,7 @@ input[type=text] {
   box-sizing: border-box;
   border: 1px solid #555;
   outline: none;
-  width: 700px;
+  width: 900px;
 }
 
 input[type=password] {
@@ -49,7 +49,7 @@ input[type=password] {
   box-sizing: border-box;
   border: 1px solid #555;
   outline: none;
-  width: 700px;
+  width: 900px;
 }
 
 input[type=text]:focus {
@@ -82,6 +82,36 @@ input[type=text]:focus {
         table, td{
           border-left:1px solid none;
         }
+        
+        .btn3 {
+  background-color: #337ab7; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+  padding: 20px 10px;
+}
+  
+.btn4 {
+  background-color: white; /* Green */
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+  padding: 20px 10px;
+}
     </style>
 </head>
 <br><center><br>
@@ -93,41 +123,61 @@ input[type=text]:focus {
     <br>
     <br>
     <br>
-    <h1>회원가입</h1>
-    <br>
-    <br>
-    <p>회원정보 입력</p>
-    
-    <br>
-    <button class="button">
-      <ul style="list-style-type: circle;">
-      <li>로컬리 홈페이지는 회원의 개인정보보호문제를 신중하게 취급합니다.</li>
-        <li>아이디/비밀번호 분실 등 본인 여부 확인이 필요할 경우를 위해 가급적 신분증에 기재된 이름, 생년월일을 입력해 주세요.</li>
-    </ul>
-    </button>
-    <br>
-    <br>
-    
-        
-    {%csrf_token%}
-    <table border="1" width="1000">
-        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>아이디</li></ul></td><td><form method="POST" action="{%url 'register'%}">
-            <input type="text" id="fname" name="fname" value="최소5자 ~ 최대15자">
-            <br><bb class="star">영문, 숫자만 가능합니다(5~15자)</bb></td></tr>
-        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호</li></ul></td>
-          <td><input type="password" id="lname" name="lname" value="영문,숫자 특수문자 중 3가지 이상 혼합 9~15자"><br><bb class="star">특수문자는 '~', '!', '@', '#', '$', '^', '*', '(', ')', '=', '_', '.','|'만 사용가능합니다.</bb></td></tr>
-        <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호 확인</li></ul></td><td><input type="password" id="lname" name="lname" value=""></td></tr>
-        
-    </table>
-    <!-- <form method="POST" action="{%url 'register'%}">
-        {%csrf_token%}
-            <label for="fname"><b>아이디 정보</b></label><br>
-            <input type="text" id="fname" name="fname" value="아이디">
-            <br><br>
-            <label for="lname"></label>
-            <input type="text" id="lname" name="lname" value="비밀번호">
-          </form> -->
-          
-          
-        </center></body>
-</html>
+    <form method="POST" actions="{% url 'register'%}">     
+            <h1>회원가입</h1>
+            <br>
+            <br>
+            <p>회원정보 입력</p>
+
+            <br>
+            <button class="button">
+              <ul style="list-style-type: circle;">
+              <li>로컬리 홈페이지는 회원의 개인정보보호문제를 신중하게 취급합니다.</li>
+                <li>아이디/비밀번호 분실 등 본인 여부 확인이 필요할 경우를 위해 가급적 신분증에 기재된 이름, 생년월일을 입력해 주세요.</li>
+            </ul>
+            </button>
+            <br>
+            <br>
+
+
+            {%csrf_token%}
+            <table border="1" width="1000">
+                <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>아이디</li></ul></td><td><form method="POST" action="{%url 'register'%}">
+                    <input type="text" id="fname" name="username" placeholder="최소5자 ~ 최대15자">
+                    <br><bb class="star">영문, 숫자만 가능합니다(5~15자)</bb></td></tr>
+                <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호</li></ul></td>
+                  <td><input type="password" id="lname" name="password1" placeholder="영문,숫자 특수문자 중 3가지 이상 혼합 9~15자"><br><bb class="star">특수문자는 '~', '!', '@', '#', '$', '^', '*', '(', ')', '=', '_', '.','|'만 사용가능합니다.</bb></td></tr>
+                <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>비밀번호 확인</li></ul></td><td><input type="password" id="lname" name="password2" value=""></td></tr>
+
+            </table>
+
+           <br>
+<table border="1" width="1000">
+      <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>이름</li></ul></td><td><form method="POST" action="{%url 'register'%}">
+          <input type="text" id="fname" name="fname" value="" >
+          <br><bb class="star"></bb></td></tr>
+      <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>생년월일</li></ul></td>
+        <td><input type="text" id="lname" name="lname" value="숫자8개로 입력해주세요." maxlength="8"><br><bb class="star">아이디/비밀번호 분실 등 본인여부 확인이 필요할 경우를 위해 가급적 신분증에 기재된 이름 생년월일을 입력해주세요.<br> 허위정보를 입력하면 본인 확인할 수 없어 도움을 드릴 수가 없습니다.</bb></td></tr>
+      <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>연락처</li></ul></td><td><input type="text" id="lname" name="lname" value="11개 숫자로 입력해주세요" maxlength="11"></td></tr>
+      <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>거주지 시/도</li></ul></td><td> <select name="local" size="1" multipule>
+        <option value="seoul">서울특별시</option>
+        <option value="gyeongi">경기도</option>
+        <option value="gangwon">강원도</option>
+        <option value="choongcheong">충청도</option>
+        <option value="gyeongsang">경상도</option>
+        <option value="jeonra">전라도</option>
+        <option value="jeju">제주도</option>
+    </select></td></tr>
+      <tr><td class='gray'><ul style="list-style-type: disc;" class="star"><li>이메일</li></ul></td><td><input type="text" id="lname" name="lname" value=""><br><bb class="star">패스워드 분실 시 확인하는 메일 주소입니다. 또한 각 지역별 소식 및 뉴스레터 등 유익한 정보를 수신하기 위해<br>필요하므로 주로 사용하시는 이메일 주소를 입력해 주시기 바랍니다. </bb></td></tr>
+      
+      
+  </table>
+  <br>
+
+
+        <input type="submit" class="btn3" value="회원가입">
+        &nbsp; &nbsp; <input type="reset" value="취소" class="btn4">
+    </form>
+        </center>
+    </body>
+</html>    

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<style>
+    .myButton {
+	    background-color:#3379b7;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Arial;
+	    font-size:13px;
+	    padding:12px 22px;
+	    text-decoration:none;
+        float: right;
+        margin:10px;
+    }
+    .myButton:hover {
+    	background-color:#185f9e;
+        color:#ffffff;
+    }
+    .myButton:active {
+    	position:relative;
+        top:1px;
+    }
+    p {
+        font-size:30px; 
+        color:#337ab7;
+    }
+</style>
+</head>
+<body>
+    <br><br><br>
+    <div class="container">
+        <form method='POST'>
+            {% csrf_token %}
+            <blockquote>
+                <p>시민의견</p>
+                <h5 class="text-right">
+                    Home
+                    <span>&gt;</span>바란다
+                    <span>&gt;</span>시민의견
+                </h5>
+            </blockquote>
+            <hr>
+            <p>제목</p>
+            <input type="text" class="form-control" name="title">
+            <br>
+            <p>내용</p>
+            <textarea class="form-control" rows="20" name="body"></textarea>
+            <br><br><br><br>
+            <a href="{% url 'wish' %}" class="myButton">취소</a> 
+            <input class="myButton" type="submit" value="수정">
+            <br><br><hr><br><br>           
+        </form>
+    </div>
+</body>
+</html>

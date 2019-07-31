@@ -1,124 +1,235 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9fnpemqt72"></script>
-<style>
-    .btn {
-        width: 60px; height: 26px;
-        font-size:10px;
-    }
-     @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
-         @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
-    body{
-        font-family:'SDKukdetopokki';
-    }
-    .nav1{
-        text-align: center;
-    }
-    .nav2 {
-        display: block;
-        text-align:center;
-        font-size: 25px;
-        margin-right: 10px;
-        margin-left:10px;
-        background-color:#337ab7;
-        padding-top:15px;
-        padding-bottom:15px;
-    }
-    .title{
-        display: inline-block;
-        text-align: center;
-        margin-left : 70px;
-        margin-top: 10px;
-        font-size: 40px;
-    }
-    .title2{
-        display: inline-block;
-        text-align: center;
-        margin-right : 30px;
-        margin-top: 40px;
-        float:right;
-        font-size: 15px;
-    }
-    .title3{
-        color:white;
-        margin-left:20px;
-        margin-right : 40px;
-        margin-top: 0px;
-        margin-bottom :0px;
-    }
-    .title3:hover{
-        color:white;
-    }
-    a {
-    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    display: inline-block;
-    margin: 20px auto;
-    max-width: 180px;
-    text-decoration: none;
-    border-radius: 4px;
-    
- }
- .button{
-    padding: 20px 30px;
- }
- a.button {
-    color: rgba(30, 22, 54, 0.6);
-    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
-     margin-right:30px;
- }
- 
- .wrap{
-     text-align: center;
-    }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
 
- a.button:hover {
-    color: rgba(255, 255, 255, 0.85);
-    box-shadow: #337ab7 0 0px 0px 40px inset;
- }
-    .pills {
-        float:left;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'styles_market.css' %}">
+
+    
+
 </head>
 <body>
     <div class="nav1">
-        <a href="{% url 'choice'%}"><p class="title" >locally</p></a><a href="{% url 'site'%}"><p class="title">서울</p></a> 
-        <a href="{% url 'login'%}" class="title2"><p>로그인</p></a> <a href="register"  class="title2"><p>회원가입</p></a> 
+        <p class="title">locally</p> <p class="title">서울</p>
+        <a href="/accounts/login/" class="title2"><p>로그인</p></a> <a href="register" class="title2"><p>회원가입</p></a> 
     </div>
     <div class="nav2">
-            <a href="{% url 'schedule'%}" class="title3"> 일정</a>
-            <a href="{% url 'wish'%}" class="title3">바란다</a>
-            <a href="{% url 'market'%}" class="title3">장터</a>
-            <a href="{% url 'job'%}" class="title3">취업</a>
-            <a href="{% url 'guide'%}" class="title3">이용안내</a>
+            <a href="/schedule/" class="title3"> 일정</a>
+            <a href="/wish/" class="title3">바란다</a>
+            <a href="/market/" class="title3">장터</a>
+            <a href="/job/" class="title3">취업</a>
+            <a href="/guide/" class="title3">이용안내</a>
     </div>
     <div class="wrap">
-            <a href="#" class="button">10대</a>
+            <a href="/10/" class="button">10대</a>
             <a href="#" class="button">20대</a>
-            <a href="#" class="button">30대</a>
+            <a hrefi="#" class="button">30대</a>
             <a href="#" class="button">40대</a>
             <a href="#" class="button">50대</a>
     </div>
+    
+    <div class="row">
+        
+    <!-- /*col-3*/시작 -->
+    <div class="col-md-3">
+        
+        <div id="lnb" class="ab">
+        <h1>행사일정</h1>
+        <ul>
+            <li><a href="/market/buy">삽니다</a></li>
+            <li><a href="/market/sell">팝니다</a></li>
+            <li><a href="/market/free">무료나눔</a></li>
+        </ul>
+     </div>
+       <a href="http://item.gmarket.co.kr/Item?goodscode=899230440&pos_shop_cd=SH&pos_class_cd=111111111&pos_class_kind=T&search_keyword=" ><img src="http://gdimg.gmarket.co.kr/1175756349/still/600?ver=1511944289" width="300" height="400"></a>
+        <a href="http://item.gmarket.co.kr/Item?goodscode=1436975207&pos_shop_cd=SH&pos_class_cd=111111111&pos_class_kind=T&search_keyword="><img src="https://image.wingeat.com/item/description/a07a3877-4258-410b-a6da-05b3ace9afca-w970.jpg" width="300" height="400"></a>
+        </div>
+    
+    <!-- *col-3 완료* col-9시작   -->
+<div class="col-md-9">
+   <!-- 첫번째줄 삽니다      -->
+ <div class="row">
+     
+    
+  <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">삽니다 웅앵</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+    <!-- 2번째줄 -->
+    <div class="row">
+        
+        
+            
+        
+ 
+  <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">팝니다웅앵</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+            </div>
+            
+</div>
+    
+    <div class="row">
+        
+ 
+  <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">무료나눔 우앵우앵ㅇ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">카드 텍스트입ㄴ디ㅏ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+        
+    </div>
+    <div class="container" style="
+    max-width: 1500px;
+"><div class="row m-0 p-0">
+        <div class="col-md-4 m-0 p-0">
+            <a href="http://www.nyjmukgolbae.co.kr/bbs/board.php?bo_table=gallery" class="m-0 p-0"><img src="https://t1.daumcdn.net/cfile/tistory/2722944A57D0D5FD47" width="486" height="348"></a>
+        </div>
+        
+        <div class="col-md-4 m-0 p-0">
+            <a href="https://place.map.kakao.com/21308015" class="m-0 p-0"><img src="https://t1.daumcdn.net/cfile/tistory/11539D36500272AE2D" width="486" height="348"></a>
+        </div>
+        
+        <div class="col-md-4 m-0 p-0">
+            <a href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=1280974445&gclid=EAIaIQobChMImrzqksHZ4wIV0oBwCh0O7QRKEAQYAyABEgJd8_D_BwE&utm_term=&utm_campaign=%B1%B8%B1%DB%BC%EE%C7%CEPC+%C3%DF%B0%A1%C0%DB%BE%F7&utm_source=%B1%B8%B1%DB_PC_S_%BC%EE%C7%CE&utm_medium=%B0%CB%BB%F6" class="m-0 p-0"><img src="https://www.sanghafarm.co.kr/sanghafarm_Data/upload/shop/product/201802/A0002325_2018022014114009305.jpg" width="486" height="348"></a>
+        </div>
+    </div></div>
+        
 
-    
-    
-</body>
-</html>
-    
+    </div></body></html>

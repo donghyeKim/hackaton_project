@@ -1,0 +1,23 @@
+@font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+         @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
+    body{
+        font-family:'SDKukdetopokki';
+    }
+            .nav2 {
+        display: block;
+        text-align:center;
+        font-size: 25px;
+        background-color:#337ab7;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+            .title3{
+        color:white;
+        margin-left : 20px;
+        margin-right : 40px;
+        margin-top: 0px;
+        margin-bottom :0px;
+    }
+    .title3:hover{
+        color:white;
+    }

@@ -45,6 +45,16 @@ input[type=text] {
 input[type=text]:focus {
   background-color: white;
 }
+        
+        input[type=password] {
+  width: 100%;
+  padding: 25px 20px;
+  margin: 0.0001px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  width: 500px;
+}
     </style>
 </head>
 <body><center><br>
@@ -64,14 +74,17 @@ input[type=text]:focus {
     <br>
     <br>
     <br>
-    <form method="POST" action="{url 'login'}">
+    <form method="POST" action="{% url 'login' %}">
+        {%csrf_token%}
             <label for="fname"></label>
-            <input type="text" id="fname" name="fname" value="아이디">
+            <input type="text" id="fname" name="username" placeholder="아이디">
             <br><br>
             <label for="lname"></label>
-            <input type="text" id="lname" name="lname" value="비밀번호">
-          </form>
+            <input type="password" id="lname" name="password1" placeholder="비밀번호"><<
+            <input type="submit" id="button" name="login" value="로그인" class="button">
+   </form>
           <br>
-          <button class="button">로그인</button>
+          
+    
         </center></body>
 </html>

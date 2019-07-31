@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+
+
+<link rel="stylesheet" href="{% static 'styles_schedulebokji.css' %}">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9fnpemqt72"></script>
+<style>
+   @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+   @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+    .cont{
+        float:right;
+    }
+    .my-hr {
+        border: 0;
+        height: 1px;
+        width: 1000px;
+        float:left;
+        background: rgb(0, 0, 0);
+    }
+    p {
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(-90deg, #000000 50%, #000000 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        font-size:30px;
+    }
+    .ab{
+        float:left;
+        margin-right:110px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    /* lnb */
+    #lnb {
+      position: relative;
+      width: 200px;
+    }
+    #lnb h1 {
+      height: 40px;
+      text-align: center;
+      color: #fff;font-size: 20px;
+      line-height: 1.8;
+      letter-spacing: -2px; 
+      background: #337ab7;
+    margin-left: 5px;
+    }
+    #lnb > ul > li { 
+      border-bottom: 1px solid #dcdcdc;
+    }
+    #lnb > ul > li > a {
+      display: block;
+      padding: 14px 35px 14px 15px; 
+      color: inherit;
+      font-size: 14px;background:#f5f2ec url(http://cfile26.uf.tistory.com/image/2417E04D570C5C02256897) no-repeat 95% 15px;
+    }
+    #lnb > ul > li a:hover { 
+      text-decoration:none !important; 
+      color: #337ab7; 
+      background-color: #f5f2ec;  
+      width:500px;
+    }
+    .btn {
+      width: 60px; height: 26px;
+      font-size:10px;
+    }
+    body {
+      font-family:'SDKukdetopokki';
+      width: 1500px; 
+      margin: 0px auto;
+    }
+    .nav1{
+        text-align: center;
+    }
+    .nav2 {
+        display: block;
+        text-align:center;
+        font-size: 25px;
+       
+        margin-right: 20px;
+        background-color:#337ab7;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+    .title{
+        display: inline-block;
+        text-align: center;
+        margin-left : 70px;
+        margin-top: 10px;
+        font-size: 40px;
+    }
+    .title2{
+        display: inline-block;
+        text-align: center;
+        margin-right : 30px;
+        margin-top: 40px;
+        float:right;
+        font-size: 15px;
+    }
+    .title3{
+        color:white;
+        margin-left:20px;
+        margin-right : 40px;
+        margin-top: 0px;
+        margin-bottom :0px;
+    }
+    .title3:hover{
+        color:white;
+    }
+    a {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 180px;
+    text-decoration: none;
+    border-radius: 4px;
+    }
+    .button{
+      padding: 20px 30px;
+    }
+    a.button {
+      color: rgba(30, 22, 54, 0.6);
+      box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+      margin-right:30px;
+    }
+    .wrap{
+     text-align: center;
+    }
+    a.button:hover {
+      color: rgba(255, 255, 255, 0.85);
+      box-shadow: #337ab7 0 0px 0px 40px inset;
+    }
+    .pills {
+        float:left;
+    }
+    .event{
+      float:left;
+    }
+    .sizeup{
+        width:2000px;
+    }
+</style>
+</head>
+<body>
+    <div class="nav1">
+        <p class="title" >locally</p> <p class="title">서울</p>
+        <a href="{% url 'login'%}" class="title2"><p>로그인</p></a> <a href="register"  class="title2"><p>회원가입</p></a> 
+    </div>
+    <div class="nav2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'schedule'%}" class="title3"> 일정</a>
+            <a href="{% url 'wish'%}" class="title3">바란다</a>
+            <a href="{% url 'market'%}" class="title3">장터</a>
+            <a href="{% url 'job'%}" class="title3">취업</a>
+            <a href="{% url 'guide'%}" class="title3">이용안내</a>
+    </div>
+    <div class="wrap">
+            <a href="#" class="button">10대</a>
+            <a href="#" class="button">20대</a>
+            <a href="#" class="button">30대</a>
+            <a href="#" class="button">40대</a>
+            <a href="#" class="button">50대</a>
+    </div>
+    <div id="lnb" class="ab">
+        <h1>행사일정</h1>
+        <ul>
+            <li><a href="#none">문화행사</a></li>
+            <li><a href="{% url 'schedulebokji'%}">복지행사</a></li>
+        </ul>
+    </div>
+    <div class="cont">
+    <div class="container">
+    <div class="ab"> 
+        <br><p>복지행사</p><br>
+        <hr class="my-hr"><br><br><br>
+        <div class="sizeup">
+            <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">보육</strong>
+                         <h3 class="mb-0">역사문화 생태산책</h3>
+                         <div class="mb-1 text-muted">Aug 17</div>
+                         
+                         <h4>역사유적, 문화, 자연생태, 지리, 트래킹이 함께하는 역사탐방입니다.</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="http://sslib.gangnam.go.kr/uload/userfiles/images/%EC%97%AD%EC%82%AC%ED%83%90%EB%B0%A9%20%ED%8F%AC%EC%8A%A4%ED%84%B0%EC%B5%9C%EC%A2%85%20new.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+             <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">다문화</strong>
+                         <h3 class="mb-0">언어발달지원서비스</h3>
+                         <div class="mb-1 text-muted">상시모집</div>
+                         
+                         <h4>다문화 가족 자녀의 언어발달 수준을 평가하고, 의사소통 및 학습에 어려움을 가진 아동에게 맞춤형 언어교육을 하여 생애주기별 언어발달이 원활하게 되도록 도와주는 서비스입니다.</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="https://www.mcfamily.or.kr/upfile/nseditor/b360d84da0d6182a5b861c9d7904b1f6_1563942322_7483.png" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+            <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">다문화복지</strong>
+                         <h3 class="mb-0">제100회 전국체전과 함께하는 외국인주민체육대회</h3>
+                         <div class="mb-1 text-muted">Oct 3~9</div>
+                         
+                         <h4>서울시에서는 2019년도 제100회 전국체전이 서울에서 개최되는 것을 기념하여,
+
+ 
+
+                            <제100회 전국체전과 함께하는 외국인주민체육대회(Seoul Global Sports Festival)>를 개최합니다.</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="http://news.seoul.go.kr/welfare/files/2019/07/5d303424adbc03.16784778.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+            
+                 <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">보육</strong>
+                         <h3 class="mb-0">동화책 식당 & 동화 클레이아트</h3>
+                         <div class="mb-1 text-muted">Aug 6~27</div>
+                         
+                         <h4>조물조물 클레이아트부터 즐거운 요리 수업까지!<br>이야기가 있는 오감 쑥쑥<동화책 식당 & 동화 클레이아트></h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="https://iseoul.seoul.go.kr/upload/editor/30000011407/20190715101918538.png" width="550" height="250"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+        </div>
+        </div>
+        </div>
+    </div>
+         
+        
+</body>
+</html>
+    

@@ -1,6 +1,20 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+
+<link rel="stylesheet" href="{% static 'styles_schedule.css' %}">
+
+
+    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
@@ -15,6 +29,10 @@
 <style>
    @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
    @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+    .cont{
+        float:right;
+    }
     .my-hr {
         border: 0;
         height: 1px;
@@ -25,7 +43,7 @@
     p {
         position: relative;
         display: inline-block;
-        background: linear-gradient(-90deg, #337ab7 50%, #000000 50%);
+        background: linear-gradient(-90deg, #000000 50%, #000000 50%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         white-space: nowrap;
@@ -53,7 +71,8 @@
       color: #fff;font-size: 20px;
       line-height: 1.8;
       letter-spacing: -2px; 
-      background: #337ab7; 
+      background: #337ab7;
+    margin-left: 5px;
     }
     #lnb > ul > li { 
       border-bottom: 1px solid #dcdcdc;
@@ -77,7 +96,7 @@
     body {
       font-family:'SDKukdetopokki';
       width: 1500px; 
-      margin: 20px auto;
+      margin: 0px auto;
     }
     .nav1{
         text-align: center;
@@ -86,8 +105,8 @@
         display: block;
         text-align:center;
         font-size: 25px;
-        margin-right: 10px;
-        margin-left:10px;
+       
+        margin-right: 20px;
         background-color:#337ab7;
         padding-top:15px;
         padding-bottom:15px;
@@ -150,6 +169,9 @@
     .event{
       float:left;
     }
+    .sizeup{
+        width:2000px;
+    }
 </style>
 </head>
 <body>
@@ -158,6 +180,7 @@
         <a href="{% url 'login'%}" class="title2"><p>로그인</p></a> <a href="register"  class="title2"><p>회원가입</p></a> 
     </div>
     <div class="nav2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{% url 'schedule'%}" class="title3"> 일정</a>
             <a href="{% url 'wish'%}" class="title3">바란다</a>
             <a href="{% url 'market'%}" class="title3">장터</a>
@@ -175,13 +198,90 @@
         <h1>행사일정</h1>
         <ul>
             <li><a href="#none">문화행사</a></li>
-            <li><a href="#none">복지행사</a></li>
+            <li><a href="{% url 'schedulebokji'%}">복지행사</a></li>
         </ul>
-     </div>
+    </div>
+    <div class="cont">
+    <div class="container">
     <div class="ab"> 
         <br><p>문화행사</p><br>
-        <hr class="my-hr"><br>
+        <hr class="my-hr"><br><br><br>
+        <div class="sizeup">
+            <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">경제</strong>
+                         <h3 class="mb-0">서울상상산업포럼 2019</h3>
+                         <div class="mb-1 text-muted">Nov 12</div>
+                         
+                         <h4>서울상상산업포럼은 만화, 웹툰, 애니메이션, 게임, 1인미디어, VR/AR 및 뉴미디어와 같은 다양한 분야의 융합으로 급성장하고 있는 상상산업의 현재와 미래 전망을 보여주는 행사입니다.</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="https://news.seoul.go.kr/economy/files/2019/07/5d23e59d6e3153.24403012.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+             <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">문화</strong>
+                         <h3 class="mb-0">[북촌문화센터] 7월의 북촌문화요일 운영 안내</h3>
+                         <div class="mb-1 text-muted">Nov 12</div>
+                         
+                         <h4>[북촌문화센터] 7월의 북촌문화요일 운영 안내</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="https://news.seoul.go.kr/culture/files/2019/07/image1.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+            <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">환경</strong>
+                         <h3 class="mb-0">2019년 한강야경투어(상반기) 참여자 모집</h3>
+                         <div class="mb-1 text-muted">Nov 12</div>
+                         
+                         <h4>반포한강공원 일대의 야경 명소를 해설사와 함께 오감으로 체험하는 한강 야경 투어 6.28~7.26까지 운영을 시작합니다. 낮에는 숨겨져 있는 한강의 반전매력이 궁금하신 분들은 한강으로 놀러오세요!</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="https://news.seoul.go.kr/env/files/2019/06/5d071b20bb29b0.96254913.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+            
+                 <div class="row mb-2">
+             <div class="col-md-6">
+                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                     <div class="col p-4 d-flex flex-column position-static">
+                         <strong class="d-inline-block mb-2 text-primary">문화</strong>
+                         <h3 class="mb-0">한국근현대명화전 《근대의 꿈: 꽃나무는 심어 놓고》</h3>
+                         <div class="mb-1 text-muted">Nov 12</div>
+                         
+                         <h4>한국근현대명화전 《근대의 꿈: 꽃나무는 심어 놓고》/2019.7.2.(화) - 9.15.(일)/서울시립 북서울미술관 2층(전시실2, 프로젝트갤러리2)</h4>
+                     </div>
+                     <div class="col-auto d-none d-lg-block" >
+                         <img src="http://news.seoul.go.kr/culture/files/2019/06/5d0c72cca0e366.73148287-768x1133.jpg" width="550" height="250"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+        </div>
+        </div>
+        </div>
     </div>
+         
+        
 </body>
 </html>
     

@@ -1,71 +1,12 @@
+{% load staticfiles %}
 <head>
+
+
+<link rel="stylesheet" href="{% static 'styles_home.css' %}">
+</head>
+
     <style>
-         @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
-         @font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: normal; font-style: normal; }
-        .choice{
-            font-family:'BMDOHYEON';
-        }
-      
-        
-        button {
-        font-family: 'BMDOHYEON';
-        font-size: 25px;
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-        color: white;
-        font-weight: bold;
-        border: 3px solid #f1f1f1;
-        position: absolute;
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        width: 20%;
-        padding: 20px;
-        text-align: center;
-    }
-    #backgroundImage{z-index: 1;}
-    #backgroundImage:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: url(https://cdn.pixabay.com/photo/2018/12/31/14/45/bukchon-3905234_1280.jpg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        opacity: 0.5;
-        filter:alpha(opacity=40);
-        height:100%;
-        width:100%;
-    }
-    .main {
-        height:500px;
-        width:320px;
-        margin:auto;
-        z-index:-1;
-        opacity: 1;
-        filter:alpha(opacity=100);
-    }
-     .bg-text {
-        font-family: 'SDKukdetopokki';
-        font-size: 25px;
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-        color: white;
-        font-weight: bold;
-        border: 3px solid #f1f1f1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        width: 80%;
-        padding: 20px;
-        text-align: center;
-    }
+         
    
   
 </style>

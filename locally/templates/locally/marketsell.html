@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<head>
+
+<link rel="stylesheet" href="{% static 'styles_market-sell.css' %}">
+</head>
+
+</head>
+<body>
+    <div class="nav1">
+        <p class="title" >locally</p> <p class="title">서울</p>
+        <a href="{% url 'login'%}" class="title2"><p>로그인</p></a> <a href="register"  class="title2"><p>회원가입</p></a> 
+    </div>
+    <div class="nav2">
+            <a href="{% url 'schedule'%}" class="title3"> 일정</a>
+            <a href="{% url 'wish'%}" class="title3">바란다</a>
+            <a href="{% url 'market'%}" class="title3">장터</a>
+            <a href="{% url 'job'%}" class="title3">취업</a>
+            <a href="{% url 'guide'%}" class="title3">이용안내</a>
+    </div>
+    <div class="wrap">
+            <a href="#" class="button">10대</a>
+            <a href="#" class="button">20대</a>
+            <a href="#" class="button">30대</a>
+            <a href="#" class="button">40대</a>
+            <a href="#" class="button">50대</a>
+    </div>
+    <div id="lnb" class="ab">
+        <h1>행사일정</h1>
+        <ul>
+            <li><a href="/market/buy">삽니다</a></li>
+            <li><a href="/market/sell">팝니다</a></li>
+            <li><a href="/market/free">무료나눔</a></li>
+        </ul>
+     </div>
+    <div id="mainWrapper">
+    <ul id ="ulTable">
+        <li>
+            <ul>
+                <li>No</li>
+                <li>제목</li>
+                <li>작성일</li>
+                <li>작성자</li>
+                <li>조회수</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>1</li>
+                <li class="left">제목제목제목제목1</li>
+                <li>2014.07.09</li>
+                <li>자바킹</li>
+                <li>0</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
